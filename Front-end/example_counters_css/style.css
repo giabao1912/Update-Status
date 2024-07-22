@@ -1,0 +1,20 @@
+body{
+    counter-reset: heading;
+}
+
+h2{
+    counter-increment: heading;
+    counter-reset: sub-heading;
+}
+
+h2::before{
+    content: counter(heading) " ";
+}
+
+h3{
+    counter-increment: sub-heading;
+}
+
+h3::before{
+    content: counter(heading) "." counter(sub-heading) " ";
+}
